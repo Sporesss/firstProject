@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-02-12T14:54:33</date>
+  <millis>1455281673451</millis>
+  <sequence>7</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '1'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:54:41</date>
+  <millis>1455281681571</millis>
+  <sequence>8</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'all this'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:54:41</date>
+  <millis>1455281681572</millis>
+  <sequence>9</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>'NumberFormatException' -&gt; wasn't entered number</message>
+</record>
+<record>
+  <date>2016-02-12T14:54:48</date>
+  <millis>1455281688861</millis>
+  <sequence>10</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '4'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:54:48</date>
+  <millis>1455281688863</millis>
+  <sequence>11</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>Exception -&gt; rights aren't enough!</message>
+</record>
+<record>
+  <date>2016-02-12T14:54:53</date>
+  <millis>1455281693286</millis>
+  <sequence>12</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'exit'.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-02-12T14:55:32</date>
+  <millis>1455281732123</millis>
+  <sequence>5</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '1'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:55:39</date>
+  <millis>1455281739033</millis>
+  <sequence>6</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '4'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:55:39</date>
+  <millis>1455281739034</millis>
+  <sequence>7</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>Exception -&gt; rights aren't enough!</message>
+</record>
+<record>
+  <date>2016-02-12T14:55:45</date>
+  <millis>1455281745210</millis>
+  <sequence>8</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'm'.</message>
+</record>
+<record>
+  <date>2016-02-12T14:55:45</date>
+  <millis>1455281745211</millis>
+  <sequence>9</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>'NumberFormatException' -&gt; wasn't entered number</message>
+</record>
+<record>
+  <date>2016-02-12T14:55:49</date>
+  <millis>1455281749939</millis>
+  <sequence>10</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'exIT'.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-02-12T15:24:22</date>
+  <millis>1455283462695</millis>
+  <sequence>6</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'gogogo'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:22</date>
+  <millis>1455283462697</millis>
+  <sequence>7</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>'NumberFormatException' -&gt; wasn't entered number</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:27</date>
+  <millis>1455283467269</millis>
+  <sequence>8</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'what&amp;'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:27</date>
+  <millis>1455283467271</millis>
+  <sequence>9</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>WARNING</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>allChecksOfUserInput</method>
+  <thread>1</thread>
+  <message>'NumberFormatException' -&gt; wasn't entered number</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:31</date>
+  <millis>1455283471095</millis>
+  <sequence>10</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '1'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:33</date>
+  <millis>1455283473119</millis>
+  <sequence>12</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '10'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:37</date>
+  <millis>1455283477737</millis>
+  <sequence>13</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '2'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:44</date>
+  <millis>1455283484041</millis>
+  <sequence>15</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '3'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:52</date>
+  <millis>1455283492127</millis>
+  <sequence>17</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '3'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:56</date>
+  <millis>1455283496256</millis>
+  <sequence>19</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '1'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:24:58</date>
+  <millis>1455283498949</millis>
+  <sequence>21</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '10'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:25:02</date>
+  <millis>1455283502873</millis>
+  <sequence>22</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'exit'.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-02-12T15:28:48</date>
+  <millis>1455283728716</millis>
+  <sequence>3</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '1'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:28:50</date>
+  <millis>1455283730611</millis>
+  <sequence>5</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered '2'.</message>
+</record>
+<record>
+  <date>2016-02-12T15:28:55</date>
+  <millis>1455283735135</millis>
+  <sequence>7</sequence>
+  <logger>homework_12_2.DialogWithUser</logger>
+  <level>INFO</level>
+  <class>homework_12_2.DialogWithUser</class>
+  <method>setAction</method>
+  <thread>1</thread>
+  <message>Was entered 'exit'.</message>
+</record>
+</log>

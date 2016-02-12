@@ -1,0 +1,110 @@
+фев 12, 2016 2:54:01 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'kto'.
+фев 12, 2016 2:54:07 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'kto-kto?'.
+фев 12, 2016 2:54:10 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'admin'.
+фев 12, 2016 2:54:10 PM homework_12_2.AuthenticationSystem checkIdentification
+INFO: Identification was successful
+фев 12, 2016 2:54:16 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'mypassword'.
+фев 12, 2016 2:54:24 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'yourpassword'.
+фев 12, 2016 2:54:30 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'adminpassword'.
+фев 12, 2016 2:54:33 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '1'.
+фев 12, 2016 2:54:41 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'all this'.
+фев 12, 2016 2:54:41 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: 'NumberFormatException' -> wasn't entered number
+фев 12, 2016 2:54:48 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '4'.
+фев 12, 2016 2:54:48 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: Exception -> rights aren't enough!
+фев 12, 2016 2:54:53 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'exit'.
+фев 12, 2016 2:55:04 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'nobody'.
+фев 12, 2016 2:55:07 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'guest'.
+фев 12, 2016 2:55:07 PM homework_12_2.AuthenticationSystem checkIdentification
+INFO: Identification was successful
+фев 12, 2016 2:55:15 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'qwerty'.
+фев 12, 2016 2:55:21 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'guestpassword'.
+фев 12, 2016 2:55:32 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '1'.
+фев 12, 2016 2:55:39 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '4'.
+фев 12, 2016 2:55:39 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: Exception -> rights aren't enough!
+фев 12, 2016 2:55:45 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'm'.
+фев 12, 2016 2:55:45 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: 'NumberFormatException' -> wasn't entered number
+фев 12, 2016 2:55:49 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'exIT'.
+фев 12, 2016 3:23:46 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'super_user'.
+фев 12, 2016 3:23:46 PM homework_12_2.AuthenticationSystem checkIdentification
+INFO: Identification was successful
+фев 12, 2016 3:23:55 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'idontremember'.
+фев 12, 2016 3:23:58 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'qwerty'.
+фев 12, 2016 3:24:08 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'super_userpassword'.
+фев 12, 2016 3:24:16 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'superuserpassword'.
+фев 12, 2016 3:24:22 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'gogogo'.
+фев 12, 2016 3:24:22 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: 'NumberFormatException' -> wasn't entered number
+фев 12, 2016 3:24:27 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'what&'.
+фев 12, 2016 3:24:27 PM homework_12_2.DialogWithUser allChecksOfUserInput
+WARNING: 'NumberFormatException' -> wasn't entered number
+фев 12, 2016 3:24:31 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '1'.
+фев 12, 2016 3:24:31 PM homework_12_2.UsersActions userReadData
+INFO: User Read Data
+фев 12, 2016 3:24:33 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '10'.
+фев 12, 2016 3:24:37 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '2'.
+фев 12, 2016 3:24:37 PM homework_12_2.UsersActions userAddData
+INFO: User Add Data
+фев 12, 2016 3:24:44 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '3'.
+фев 12, 2016 3:24:44 PM homework_12_2.UsersActions userDeleteData
+INFO: User Delete Data
+фев 12, 2016 3:24:52 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '3'.
+фев 12, 2016 3:24:52 PM homework_12_2.UsersActions userDeleteData
+INFO: User Delete Data
+фев 12, 2016 3:24:56 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '1'.
+фев 12, 2016 3:24:56 PM homework_12_2.UsersActions userReadData
+INFO: User Read Data
+фев 12, 2016 3:24:58 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '10'.
+фев 12, 2016 3:25:02 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'exit'.
+фев 12, 2016 3:28:43 PM homework_12_2.AuthenticationSystem identification
+INFO: Was entered login 'admin'.
+фев 12, 2016 3:28:43 PM homework_12_2.AuthenticationSystem checkIdentification
+INFO: Identification was successful
+фев 12, 2016 3:28:47 PM homework_12_2.AuthenticationSystem authentication
+INFO: Was entered login 'adminpassword'.
+фев 12, 2016 3:28:48 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '1'.
+фев 12, 2016 3:28:48 PM homework_12_2.UsersActions userReadData
+INFO: User Read Data
+фев 12, 2016 3:28:50 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered '2'.
+фев 12, 2016 3:28:50 PM homework_12_2.UsersActions userAddData
+INFO: User Add Data
+фев 12, 2016 3:28:55 PM homework_12_2.DialogWithUser setAction
+INFO: Was entered 'exit'.
