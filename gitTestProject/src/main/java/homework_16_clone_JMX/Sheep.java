@@ -5,6 +5,7 @@ public class Sheep implements Cloneable, CLoneMXBean {
     private String name;
     private int age;
     private Sheep parent;
+    public Sheep clone;
 
     public Sheep() {
     }
@@ -39,6 +40,14 @@ public class Sheep implements Cloneable, CLoneMXBean {
         this.parent = parent;
     }
 
+    public Sheep getClone() {
+        return clone;
+    }
+
+    public void setClone(Sheep clone) {
+        this.clone = clone;
+    }
+
     @Override
     protected Sheep clone() throws CloneNotSupportedException {
         Sheep cloneSheep = (Sheep) super.clone();
@@ -56,14 +65,14 @@ public class Sheep implements Cloneable, CLoneMXBean {
                 '}';
     }
 
-    public Sheep createObjectFromBaseEntity() throws CloneNotSupportedException {
+    public String createObjectFromBaseEntity() throws CloneNotSupportedException {
         Sheep parent = new Sheep("Dolly", 6, null);
         Sheep child = new Sheep("Molly" , 4, parent);
-        Sheep cloneSheep = child.clone();
-        return cloneSheep;
+        clone = child.clone();
+        return "The clone was created!";
     }
 
-    public String getInformationAboutObject(Sheep clone) {
-        return clone.toString();
+    public String getInformationAboutObject() {
+        return clone == null ? "clone not found" : clone.toString();
     }
 }

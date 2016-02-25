@@ -2,7 +2,11 @@ package homework_16_clone_JMX;
 
 public interface CLoneMXBean {
 
-    Sheep createObjectFromBaseEntity() throws CloneNotSupportedException;
+    String createObjectFromBaseEntity() throws CloneNotSupportedException;
 
-    String getInformationAboutObject(Sheep clone);
+    String getInformationAboutObject();
+
+    String getName();
+
+    void setName(String name);
 }
