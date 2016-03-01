@@ -17,28 +17,54 @@ public class UserIOTest {
             file.createNewFile();
         }
 
-        User user1 = new User("User #1", "Userov", 11);
-        User user2 = new User("User #2", "Adminov", 22);
-        User user3 = new User("User #3", "Loginov", 33);
+        User users[] = {
+                new User("User #1", "Userov", 11),
+                new User("User #2", "Adminov", 22),
+                new User("User #3", "Loginov", 33)
+        };
 
-        writeObjectToFile(file, user3);
+//        for (User user : users) {
+//            writeObjectToFile(file, user);
+//        }
+
+        writeObjectToFile(file, users);
 
         readObjectFromFile(file);
-
     }
 
-    private static void writeObjectToFile(File file, Object o) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
+    private static void writeObjectToFile(File file, Object someObjects[]) throws IOException {
+        FileOutputStream fileOutputStream = new FileOutputStream(file, true);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(o);
+        for (Object eachObject : someObjects) {
+            objectOutputStream.writeObject(eachObject);
+        }
+//        objectOutputStream.writeObject(someObjects);
+        objectOutputStream.close();
     }
 
     private static void readObjectFromFile(File file) throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(file);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        Object o = objectInputStream.readObject();
-        System.out.println(o);
+        Object o;
+        while ((o = objectInputStream.readObject()) != null) {
+            System.out.println(o);
+//            o = objectInputStream.readObject();
+        }
+
+
+
+
+//        List<Object> arrayList;
+//        arrayList = Arrays.asList(objectInputStream.readObject());
+//        for (Object object : arrayList) {
+//            System.out.println(object);
+//        }
+//        Object objectFromFileArray[] = new Object[3];
+//        for (int i = 0; i < objectFromFileArray.length; i++) {
+//            objectFromFileArray[i] = objectInputStream.readObject();
+//            System.out.println(objectFromFileArray[i]);
+//        }
+//        Object o = objectInputStream.readObject()
+//        System.out.println(o);
     }
-
-
 }
