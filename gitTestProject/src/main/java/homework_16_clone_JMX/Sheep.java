@@ -24,6 +24,10 @@ public class Sheep implements Cloneable, CLoneMXBean {
         this.name = name;
     }
 
+    public String methodForTest() {
+        return "It's method for test!";
+    }
+
     public int getAge() {
         return age;
     }
@@ -67,7 +71,7 @@ public class Sheep implements Cloneable, CLoneMXBean {
 
     public String createObjectFromBaseEntity() throws CloneNotSupportedException {
         Sheep parent = new Sheep("Dolly", 6, null);
-        Sheep child = new Sheep("Molly" , 4, parent);
+        Sheep child = new Sheep(name , age, parent);
         clone = child.clone();
         return "The clone was created!";
     }

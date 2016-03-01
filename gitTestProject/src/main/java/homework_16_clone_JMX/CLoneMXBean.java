@@ -9,4 +9,10 @@ public interface CLoneMXBean {
     String getName();
 
     void setName(String name);
+
+    String methodForTest();
+
+    int getAge();
+
+    void setAge(int age);
 }
