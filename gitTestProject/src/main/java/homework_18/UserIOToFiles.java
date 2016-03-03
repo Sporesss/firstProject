@@ -56,7 +56,7 @@ public class UserIOToFiles {
 
     public void writeValuesToFile(ArrayList<String> listOfValues) throws IOException {
         Path pathToNewFile = Paths.get("C:\\JavaCourse");
-        File newFile = new File(pathToNewFile + "/Parameters With Values.txt");
+        File newFile = new File(pathToNewFile + "/" + System.getProperty("user.name") + ".txt");
 
 //        FileWriter writer = new FileWriter(newFile, true);
 //        for (String parameterAndValue : listOfValues) {
