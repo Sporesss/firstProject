@@ -1,56 +1,56 @@
 package homework_19;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+        import java.io.IOException;
+        import java.io.ObjectInputStream;
+        import java.io.ObjectOutputStream;
+        import java.net.ServerSocket;
+        import java.net.Socket;
+        import java.util.logging.Logger;
 
 public class Server {
+    static Logger logger = Logger.getLogger(Server.class.getName());
+
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ServerSocket serverSocket = new ServerSocket(7777);
+        logger.info(serverSocket.toString());
         Socket accept = serverSocket.accept();
+        logger.info(accept.toString());
 
-        InputStream inputStream = accept.getInputStream();
-        OutputStream outputStream = accept.getOutputStream();
+        ObjectInputStream objectInputStream = new ObjectInputStream(accept.getInputStream());
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(accept.getOutputStream());
 
-//        DataInputStream dataInputStream = new DataInputStream(inputStream);
-//        DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+        workWithObjectsFromClient(objectInputStream, objectOutputStream);
 
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+        objectInputStream.close();
+        objectOutputStream.close();
+    }
 
-        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-
-
-
-        while (true) {
-            Object object = objectInputStream.readObject();
+    private static void workWithObjectsFromClient(ObjectInputStream objectInputStream, ObjectOutputStream objectOutputStream) throws IOException, ClassNotFoundException {
+        Object object;
+        while ((object = objectInputStream.readObject()) != null) {
+            logger.info("Object " + object + " was received from Client");
             User user = (User) object;
-            System.out.println(user.getName());
+            System.out.println("Object " + user + " was received from Client");
+            User changedUser = changeUser(user);
+            sendChangedUsersToClient(changedUser, objectOutputStream);
         }
+        sendChangedUsersToClient(null, objectOutputStream);
+    }
 
-//        Object o = null;
-//        while((o = objectInputStream.readObject())!= null){
-//            System.out.println(o);
-//        }
-//        objectInputStream.close();
+    private static User changeUser(User someUser) {
+        String newName = someUser.getSurname();
+        String newSurname = someUser.getName();
+        someUser.setName(newName);
+        someUser.setSurname(newSurname);
+        System.out.println("Object was changed -- > " + someUser);
+        logger.info("Object was changed -- > " + someUser);
+        return someUser;
+    }
 
-//        while (true) {
-//            String message = dataInputStream.readUTF();
-//            System.out.println(message);
-//        }
-
-
-
-
+    private static void sendChangedUsersToClient(User someUser, ObjectOutputStream objectOutputStream) throws IOException {
+        objectOutputStream.writeObject(someUser);
+        objectOutputStream.flush();
+        System.out.println("Changed object was sent to Client");
+        logger.info("Changed object " + someUser + " was sent to Client");
     }
 }

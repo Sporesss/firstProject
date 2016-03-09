@@ -1,6 +1,6 @@
 package homework_19;
 
-import java.io.Serializable;
+        import java.io.Serializable;
 
 public class User implements Serializable {
     public String name;
@@ -23,9 +23,17 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     @Override
     public String toString() {
-        return "User ---> " +
+        return "User: " +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age;

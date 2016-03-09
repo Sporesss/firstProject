@@ -1,68 +1,53 @@
 package homework_19;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
+import java.util.logging.Logger;
 
 public class Client {
-    static byte[] byteArray;
-    public static void main(String[] args) throws IOException {
-        int port = 7777;
-        InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
-        Socket clientSocket = new Socket(inetAddress, port);
+    static Logger logger = Logger.getLogger(Client.class.getName());
 
-        ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-//
-//        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);    // to change!!!
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-
-//        ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
-        ObjectOutputStream objectToCharArray = new ObjectOutputStream(byteArrayOutputStream);
-
-
-
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         User users[] = {
                 new User("User #1", "Userov", 11),
                 new User("User #2", "Adminov", 22),
-                new User("User #3", "Loginov", 33)
+                new User("User #3", "Loginov", 33),
+                null
         };
 
-        for (User someUser : users) {
-                objectToCharArray.writeObject(someUser);
-                objectToCharArray.flush();
-        }
-        objectToCharArray.close();
+        int port = 7777;
+        InetAddress inetAddress = InetAddress.getByName("127.0.0.1");
+        Socket clientSocket = new Socket(inetAddress, port);
+        logger.info(clientSocket.toString());
 
-        byte[] usersAsBytes = byteArrayOutputStream.toByteArray();
-        for (byte eachByte : usersAsBytes) {
-            System.out.println(eachByte);
-        }
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+        ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
 
+        sendObjectsToServer(users, objectOutputStream);
+        getChangedUsersFromServer(objectInputStream);
 
-        objectOutputStream.write(usersAsBytes);
-        objectOutputStream.flush();
         objectOutputStream.close();
+        objectInputStream.close();
+    }
 
+    private static void sendObjectsToServer(User[] users, ObjectOutputStream objectOutputStream) throws IOException {
+        for (User someUser : users) {
+            objectOutputStream.writeObject(someUser);
+            objectOutputStream.flush();
+            System.out.println("Object " + someUser + " was sent to Server");
+            logger.info("Object " + someUser + " was sent to Server");
+        }
+    }
 
-//        User user = new User("User #1", "Userov", 11);
-//        objectOutputStream.writeObject(user);
-//        objectOutputStream.flush();
-//
-//        objectInputStream.close();
-//        objectOutputStream.close();
-
-
+    private static void getChangedUsersFromServer(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+        Object object;
+        while ((object = objectInputStream.readObject()) != null) {
+            User user = (User) object;
+            System.out.println("Object " + user + " was received from Server");
+            logger.info("Object " + user + " was received from Server");
+        }
     }
 }
