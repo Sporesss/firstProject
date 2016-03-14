@@ -70,6 +70,26 @@ public class MyArray <T extends Number> {
         currentActualPosition += arrayForUnion.getMas().length;
     }
 
+    public T getMin() {
+        T min = mas[0];
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i].doubleValue() < min.doubleValue()) {
+                min = mas[i];
+            }
+        }
+        return min;
+    }
+
+    public T getMax() {
+        T max = mas[0];
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i].doubleValue() > max.doubleValue()) {
+                max = mas[i];
+            }
+        }
+        return max;
+    }
+
     public void printMyArray() {
         System.out.println(Arrays.toString(mas));
     }
