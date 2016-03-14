@@ -2,29 +2,41 @@ package homework_20;
 
 public class MyArrayTest {
     public static void main(String[] args) {
-        MyArray myArray = new MyArray();
+        MyArray<Number> integerArray = new MyArray();
         for(int i = 0; i < 10; i++) {
-            myArray.add(i);
+            integerArray.add(i);
         }
-        System.out.println(myArray);
-        myArray.add("tra");
-        System.out.println(myArray);
-        myArray.remove(2);
-        System.out.println(myArray);
-        myArray.trimToSize();
-        myArray.printMyArray();
+        integerArray.printMyArray();
+        integerArray.binarySearch(3);
+        integerArray.remove(0);
+        integerArray.remove(3);
+        integerArray.printMyArray();
+        integerArray.trimToSize();
+        integerArray.printMyArray();
 
-        MyArrayObject myArrayObject = new MyArrayObject();
+        MyArray<Number> integerArray2 = new MyArray();
         for(int i = 0; i < 10; i++) {
-            myArrayObject.add(i);
+            integerArray2.add(i);
         }
-        System.out.println(myArrayObject);
-        myArrayObject.add("tra");
-        System.out.println(myArrayObject);
-        myArrayObject.remove(2);
-        System.out.println(myArrayObject);
-        myArrayObject.trimToSize();
-        myArrayObject.printMyArray();
+
+        MyArray<Float> floatArray = new MyArray();
+        for(int i = 0; i < 10; i++) {
+            floatArray.add((float)i);
+        }
+        floatArray.printMyArray();
+        floatArray.binarySearch(5.0f);
+
+        Number unionArray[] = integerArray.unionArrays(floatArray.getMas());    // first version
+        for (Number eachElement : unionArray) {
+            System.out.print(" " + eachElement);
+        }
+        System.out.println();
+
+        integerArray.unionArraysAsArrayObjects(floatArray);       // second version
+        integerArray.printMyArray();
+
+        integerArray.unionArraysAsArrayObjects(integerArray2);
+        integerArray.printMyArray();
     }
 }
 

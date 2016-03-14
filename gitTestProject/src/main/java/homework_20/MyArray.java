@@ -2,14 +2,18 @@ package homework_20;
 
 import java.util.Arrays;
 
-public class MyArray <T> {
+public class MyArray <T extends Number> {
     private final static int CAPACITY = 10;
     private T mas[];
     private int currentActualPosition;
 
     public MyArray() {
-        mas = (T[]) new Object [CAPACITY];
+        mas = (T[]) new Number [CAPACITY];
         currentActualPosition = 0;
+    }
+
+    public T[] getMas() {
+        return mas;
     }
 
     public void add(T newElement) {
@@ -30,15 +34,40 @@ public class MyArray <T> {
         mas = Arrays.copyOf(mas, currentActualPosition);
     }
 
+    public void binarySearch(T elementForSearch) {
+        mas = Arrays.copyOf(mas, currentActualPosition);  // in fact it's "trimToSize" method
+        int min = 0;
+        int max = mas.length - 1;
+        int index = innerSideOfBinarySearch(mas, min, max , elementForSearch);
+        System.out.println("index = " + index);
+    }
 
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder("[");
-        for (int i = 0; i < currentActualPosition; i++) {
-            result.append(mas[i] + ", ");
+    private int innerSideOfBinarySearch(T mas[], int min, int max, T elementForSearch) {
+        int averageIndex = (max - min) / 2 + min;
+        if (elementForSearch.doubleValue() < mas[averageIndex].doubleValue()) {
+            return innerSideOfBinarySearch(mas, min, averageIndex, elementForSearch);
         }
-        result.append("]");
-        return result.toString();
+        if (elementForSearch.doubleValue() > mas[averageIndex].doubleValue()) {
+            return innerSideOfBinarySearch(mas, averageIndex, max, elementForSearch);
+        }
+    return averageIndex;
+    }
+
+    public T[] unionArrays(T masForUnion[]) {                                     // first version
+        if ((mas.length - currentActualPosition) < masForUnion.length) {
+            mas = Arrays.copyOf(mas, currentActualPosition + masForUnion.length);
+        }
+        System.arraycopy(masForUnion, 0, mas, currentActualPosition, masForUnion.length);
+        currentActualPosition += masForUnion.length;
+        return mas;
+    }
+
+    public void unionArraysAsArrayObjects(MyArray arrayForUnion) {              // second version
+        if ((mas.length - currentActualPosition) < arrayForUnion.getMas().length) {
+            mas = Arrays.copyOf(mas, currentActualPosition + arrayForUnion.getMas().length);
+        }
+        System.arraycopy(arrayForUnion.getMas(), 0, mas, currentActualPosition, arrayForUnion.getMas().length);
+        currentActualPosition += arrayForUnion.getMas().length;
     }
 
     public void printMyArray() {
