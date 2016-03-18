@@ -22,7 +22,9 @@ public class MyMapTest {
 //        myMap.deleteMapObjectWithoutIteratorOld(7);   // second version
 //        System.out.println(myMap);
 
-        myMap.deleteMapObjectWithoutIterator(1);
+//        myMap.deleteMapObjectWithoutIterator(1);
+
+        myMap.remove(5);
 
         Iterator iterator = myMap.iterator();
         while (iterator.hasNext()) {

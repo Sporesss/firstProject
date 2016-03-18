@@ -21,14 +21,6 @@ public class MyMap<K, V> implements Iterable<MyMap.MyEntry<K, V>>, Iterator<MyMa
         return elements[cursor++];
     }
 
-    public MyEntry<K, V> thisElement() {
-        return elements[cursor - 1];
-    }
-
-    public void deleteElement(MyEntry<K, V> thisElement) {
-        elements[cursor - 1] = null;
-    }
-
     public static class MyEntry<K, V> implements Map.Entry<K, V> {
         private K key;
         private V value;
@@ -149,56 +141,72 @@ public class MyMap<K, V> implements Iterable<MyMap.MyEntry<K, V>>, Iterator<MyMa
         }
     }
 
-    public void deleteMapObject(K key) {             // first version
-        while (iterator().hasNext()) {
-            if (iterator().next() != null && thisElement().getKey().equals(key)) {
-                deleteElement(thisElement());
-            }
-        }
-    }
-
-    public void deleteMapObjectWithoutIteratorOld(K key) {     // second version
-        for (int i = 0; i < elements.length; i++) {
-            if (elements[i] != null && elements[i].getKey().equals(key)) {
-                elements[i] = null;
-            }
-        }
-    }
-
-    public void deleteMapObjectWithoutIterator(K key) {     // second version
-//        int hashForSearch = hash(key);
-        System.out.println("deleteMapObjectWithoutIterator -ENTERED!!!");
+    public void remove(K key) {
         for (int i = 0; i < elements.length; i++) {
             if (elements[i] != null) {
-                System.out.println("hash(key): " + hash(key));
-//                System.out.println("hash(elements[i].getKey()) !!!!!!!!!!! " + hash(elements[i].getKey()));
-                System.out.println("elements[i].getHash()!!!!!!!!!!!!!!!!!!!!!!! " + elements[i].getHash());
-                System.out.println("_____________________________________________________________________________");
+                MyEntry<K, V> previousElement = null;
+                MyEntry<K, V> thisElement = elements[i];
+                do {
+                    if (thisElement.getKey() == key && previousElement == null) {
+                        thisElement = thisElement.getNextEntry();
+                        elements[i] = thisElement;
+                        break;
+                    }
+                    else if (thisElement.getKey() == key && previousElement != null) {
+                        nextEntryFunction(elements[i], previousElement, thisElement);
+                        break;
+                    } else {
+                        previousElement = thisElement;
+                        thisElement = thisElement.getNextEntry();
+                    }
+                } while (thisElement != null);
             }
-
-//            if (elements[i] != null && hash(elements[i].getKey()) == hash(key)) {
-            if (elements[i] != null && hash(key) == elements[i].getHash()) {
-                System.out.println("elements[i] --> " + elements[i]);
-                MyEntry<K, V> entry = elements[i];
-                entry = relinkAkaDelete(entry, key);
-                System.out.println("ENTRY!!!!!!!" + entry);
-//                while (!elements[i].nextEntry.equals(null))
-            }
-//            if (elements[i] != null && elements[i].getKey().equals(key) && elements[i].hash == hash(key)) {
-//                elements[i] = null;
-//            }
         }
     }
 
-    private MyEntry<K, V> relinkAkaDelete(MyEntry<K, V> entry, K key) {
-        if (!entry.equals(null) && entry.getKey().equals(key)) {
-            System.out.println("entry --> " + entry);
-            entry = entry.nextEntry;
+    private MyEntry<K, V> nextEntryFunction(MyEntry<K, V> entry, MyEntry<K, V> previousElement, MyEntry<K, V> thisElement) {
+        if (entry.equals(thisElement)) {
+            previousElement.setNextEntry(thisElement.getNextEntry());
+            return entry;
         } else {
-            return relinkAkaDelete(entry.nextEntry, key);
+            return nextEntryFunction(entry.getNextEntry(), previousElement, thisElement);
         }
-        return entry;
     }
+
+//    public void deleteMapObjectWithoutIterator(K key) {     // second version
+////        int hashForSearch = hash(key);
+//        System.out.println("deleteMapObjectWithoutIterator -ENTERED!!!");
+//        for (int i = 0; i < elements.length; i++) {
+//            if (elements[i] != null) {
+//                System.out.println("hash(key): " + hash(key));
+////                System.out.println("hash(elements[i].getKey()) !!!!!!!!!!! " + hash(elements[i].getKey()));
+//                System.out.println("elements[i].getHash()!!!!!!!!!!!!!!!!!!!!!!! " + elements[i].getHash());
+//                System.out.println("_____________________________________________________________________________");
+//            }
+//
+////            if (elements[i] != null && hash(elements[i].getKey()) == hash(key)) {
+//            if (elements[i] != null && hash(key) == elements[i].getHash()) {
+//                System.out.println("elements[i] --> " + elements[i]);
+//                MyEntry<K, V> entry = elements[i];
+//                entry = relinkAkaDelete(entry, key);
+//                System.out.println("ENTRY!!!!!!!" + entry);
+////                while (!elements[i].nextEntry.equals(null))
+//            }
+////            if (elements[i] != null && elements[i].getKey().equals(key) && elements[i].hash == hash(key)) {
+////                elements[i] = null;
+////            }
+//        }
+//    }
+
+//    private MyEntry<K, V> relinkAkaDelete(MyEntry<K, V> entry, K key) {
+//        if (!entry.equals(null) && entry.getKey().equals(key)) {
+//            System.out.println("entry --> " + entry);
+//            entry = entry.nextEntry;
+//        } else {
+//            return relinkAkaDelete(entry.nextEntry, key);
+//        }
+//        return entry;
+//    }
 
     public void createNewMyEntry(V value, K key, int newPositionHash,
                                   MyEntry<K, V> element, int index) {
