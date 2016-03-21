@@ -27,9 +27,14 @@ public class Problem_8 {
         writer.println();
         writer.close();
 
-        InputStream fileInputStream = Problem_8.class.getClassLoader().getResourceAsStream(fileName);
+//        InputStream fileInputStream = Problem_8.class.getClassLoader().getResourceAsStream(fileName);
+//        Properties properties = new Properties();
+//        properties.load(fileInputStream);
+//        System.out.println(properties.get(parameterForSearch));
+
+        InputStream fileInputStream =  Problem_8.class.getResourceAsStream("C:\\JavaCourse\\firstProject\\gitTestProject\\src\\main\\resources\\Problem_8.properties");
         Properties properties = new Properties();
         properties.load(fileInputStream);
-        System.out.println(properties.get(parameterForSearch));
+        System.out.println(properties.get("username"));
     }
 }

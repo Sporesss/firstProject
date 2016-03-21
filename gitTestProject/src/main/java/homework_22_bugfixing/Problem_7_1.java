@@ -1,6 +1,6 @@
 package homework_22_bugfixing;
 
-public class Problem_7 {
+public class Problem_7_1 {
     private A objA = new A();    //was fixed
     private B objB = new B();    //was fixed
     class A {
@@ -34,7 +34,7 @@ public class Problem_7 {
     }
 
     public static void main(String[] args) {
-        A obj = new Problem_7().new A();
+        A obj = new Problem_7_1().new A();
         System.out.println(obj.toString());
     }
 
